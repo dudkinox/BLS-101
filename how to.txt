@@ -47,6 +47,6 @@ number
         (circle 20 "solid" "yellow")
         (circle 30 "solid" "green"))
 
-(overlay(circle 10 "solid" "red")
+(overlay(circle 10 ท"solid" "red")
         (circle 20 "solid" "yellow")
         (circle 30 "solid" "green"))
