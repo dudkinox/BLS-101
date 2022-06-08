@@ -1,52 +1,100 @@
-    -- Expressions --
-2 = value
-(+ 2 (* 3 4) (- (+ 1 2) 3)) = expression
-    -- Example --
-;(+ 3 4)
-;(+ 3 (* 2 3)
+day 2
 
-(sqr 3)
-(sqrt 16)
-    -- operator --
-+ - * /
-    -- operands --
-number
-    -- evaluate --
-(+ 2 (* 3 4) (- (+ 1 2) 3))
-
-(+ 2 12      (- (+ 1 2) 3))
-(+ 2 12      (- 3       3))
-(+ 2 12      0            )
-14
-    -- variable --
-"wert"
-
-(string-append "wert" " " "guitar")
-
-"123" ;string
-123 ;number
-;(+ 1 "123")
-(string-length "test")
-
-(substring "guitar" 2 4)
-
-    -- image --
+```
 (require 2htdp/image)
 
-(circle 10 "solid" "red")
+(define (bulb c)
+  (circle 40 "solid" c))
 
-(rectangle 30 60 "outline" "blue")
+(above (bulb "red")         
+       (bulb "yellow")
+       (bulb "green"))
+```
+function
+```
+(define (bulb c)
+  (circle 40 "solid" c))
 
-(text "hello" 24 "orange")
+(bulb (string-append "re" "d"))
+(bulb "red")
+(circle 40 "solid" "red")
+```
+boolean
+```
+(require 2htdp/image)
 
-(beside (circle 10 "solid" "red")
-        (circle 20 "solid" "yellow")
-        (circle 30 "solid" "green"))
+(define WIDTH 800)
+(define HEIGHT 600)
 
-(above (circle 10 "solid" "red")
-        (circle 20 "solid" "yellow")
-        (circle 30 "solid" "green"))
+(< WIDTH HEIGHT)
+(> WIDTH HEIGHT)
 
-(overlay(circle 10 ท"solid" "red")
-        (circle 20 "solid" "yellow")
-        (circle 30 "solid" "green"))
+(= 0 1)
+(= 0 0)
+
+(string=? "foo" "bar")
+```
+example boolean
+```
+(require 2htdp/image)
+
+(define I1 (rectangle 10 20 "solid" "red"))
+
+(< (image-width I1)
+   (image-height I1))
+
+(if (< (image-width I1)
+       (image-height I1))
+    "tall"
+    "wide")
+
+(if (< (image-width I1)
+       (image-height I1))
+    (image-width I1)
+    (image-height I1))
+
+(if (< (image-width .)
+       (image-height I1))
+    (image-width I1)
+    (image-height I1))
+
+(if (< 10
+       (image-height .))
+    (image-width I1)
+    (image-height I1))
+
+(if (< 10
+       20)
+    (image-width I1)
+    (image-height I1))
+
+(if #true
+    (image-width I1)
+    (image-height I1))
+
+(image-width I1)
+
+(image-width .)
+
+10
+```
+Exam 2
+```
+(require 2htdp/image)
+
+(define I1 (rectangle 10 20 "solid" "red"))
+
+(define I2 (rectangle 20 10 "solid" "blue"))
+
+(and (> (image-height I1) (image-height I2))
+     (< (image-width I1) (image-width I2)))
+```
+predicate
+```
+=
+string =
+```
+อากิวเม้น
+```
+f(1)
+```
